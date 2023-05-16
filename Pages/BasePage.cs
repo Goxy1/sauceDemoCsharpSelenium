@@ -5,7 +5,7 @@ using System;
 
 namespace AutomationFramework.Pages
 {
-    public class BasePage
+    public class BasePage//klasa koja omogucava metode
     {
         // Driver
         public IWebDriver? driver;
@@ -48,8 +48,10 @@ namespace AutomationFramework.Pages
             WaitForElementToBeVisible(element);
             return driver.FindElement(element).Text;
         }
-
+        public string GetTextFromElement(By element)
+        {
+            WaitForElementToBeVisible(element);
+            return driver.FindElement(element).Text;
+        }
     }
-
-
 }

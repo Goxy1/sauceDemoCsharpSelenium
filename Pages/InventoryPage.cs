@@ -27,7 +27,8 @@ namespace AutomationFramework.Pages
         }
 
         // Locators
-
+        By addToCartButton = By.Id("add-to-cart-sauce-labs-backpack");
+        By cartIcon = By.ClassName("shopping_cart_badge");
         /// <summary>
         /// Metoda koja klikne na zeljeni proizvod
         /// </summary>
@@ -35,6 +36,18 @@ namespace AutomationFramework.Pages
         public void ClickOnItem(string itemName)
         {
             driver.FindElement(By.XPath($"//div[@class='inventory_item_name'][contains(., '{itemName}')]")).Click();
+        }
+        private void ClickAddToCartButton()
+        {
+            ClickOnElement(addToCartButton);
+        }
+        public string GetCartNumber()
+        {
+            return GetTextFromElement(cartIcon);
+        }
+        public void AddItemToCart()
+        {
+            ClickAddToCartButton();
         }
     }
 }
