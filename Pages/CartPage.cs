@@ -9,8 +9,6 @@ namespace AutomationFramework.Pages
 {
     public class CartPage:BasePage
     {
-
-
         /// <summary>
         /// Konstruktor bez parametra
         /// </summary>
@@ -30,6 +28,8 @@ namespace AutomationFramework.Pages
 
         // locators
         By itemNameTitle = By.XPath("//div[@class='cart_item_label']/a/div");
+        By removeButton = By.Id("remove-sauce-labs-backpack");
+        By checkoutButton = By.Id("checkout");
 
 
         /// <summary>
@@ -39,6 +39,31 @@ namespace AutomationFramework.Pages
         public string GetItemName()
         {
             return driver.FindElement(itemNameTitle).Text;
+        }
+
+        /// <summary>
+        /// Metoda koja proverava postojanje cart item-a 
+        /// </summary>
+        /// <returns>vraca true ako postoji u spurotnom false</returns>
+        public bool IsCartItemDisplayed()
+        {
+            return IsElementDisplayed("class", "cart_item");
+        }
+
+        /// <summary>
+        /// Metoda koja klikne na remove dugme u cart page-u
+        /// </summary>
+        public void ClickOnRemoveButton()
+        {
+            ClickOnElement(removeButton);
+        }
+
+        /// <summary>
+        /// Metoda koja klikne na dugme Checkout
+        /// </summary>
+        public void ClickOnCheckoutButton()
+        {
+            ClickOnElement(checkoutButton);
         }
     }
 }

@@ -20,9 +20,11 @@ namespace AutomationFramework.Utils
             PageFactory.InitElements(_browser.GetDriver, page);
             return page;
         }
+
         public LogInPage LoginPage => GetPages<LogInPage>();
         public InventoryPage InventoryPage => GetPages<InventoryPage>();
         public InventoryItemPage InventoryItemPage => GetPages<InventoryItemPage>();
         public CartPage CartPage => GetPages<CartPage>();
+        public CheckOutPage CheckoutPage => GetPages<CheckOutPage>();
     }
 }

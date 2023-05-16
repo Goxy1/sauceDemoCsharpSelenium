@@ -12,15 +12,15 @@ namespace AutomationFramework.Tests
         [Test]
         public void LoginUser()
         {
-            Pages.LoginPage.Login(
-                TestData.TestData.Login.username,
-                TestData.TestData.Login.password
+            Pages.LoginPage.LoginUser(
+                TestData.TestData.LoginTest.username,
+                TestData.TestData.LoginTest.password
             );
 
             // Asert testa
             Assert.IsTrue(Pages.LoginPage.IsLoggedIn());
         }
 
-       
+
     }
 }
