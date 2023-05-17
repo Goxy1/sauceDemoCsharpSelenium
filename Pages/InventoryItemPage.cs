@@ -46,17 +46,6 @@ namespace AutomationFramework.Pages
             ClickOnElement(cartButton);
         }
 
-        /// <summary>
-        /// Metoda koja klikne na sve dugmice Add to cart u inventory page-u
-        /// </summary>
-        public void ClickOnAllAddToCartButtons()
-        {
-            IReadOnlyCollection<IWebElement> buttons = driver.FindElements(By.XPath("//button[contains(., 'Add to cart')]"));
-
-            foreach (IWebElement button in buttons)
-            {
-                button.Click();
-            }
-        }
+        
     }
 }
